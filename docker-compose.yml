@@ -1,0 +1,11 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+
+  backend:
+    build: ./hello_service
+    ports:
+      - "8000:8000"
+    command: uvicorn hello:app --host 0.0.0.0 --port 8000
