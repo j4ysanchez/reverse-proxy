@@ -8,6 +8,10 @@ app = FastAPI()
 def read_root():
     return {"message": "New service, who dis?"}
 
+@app.get("/world")
+def read_world():
+    return {"message": "Bello, World!"}
+
 @app.get("/world/{name}")
 def read_hello(name: str):
     return {"message": f"Bello, {name}!"}
